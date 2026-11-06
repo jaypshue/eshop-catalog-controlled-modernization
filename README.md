@@ -27,3 +27,4 @@ Used EngineOS to run a controlled modernization of the Catalog area:
 
 ```powershell
 dotnet test .\eShopPorted.Tests\eShopPorted.Tests.csproj# eshop-catalog-controlled-modernization
+Result: 6 tests passed.
