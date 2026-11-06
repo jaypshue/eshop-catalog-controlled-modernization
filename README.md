@@ -1,0 +1,29 @@
+# Controlled modernization of the eShop Catalog module
+
+Starting point: the legacy ASP.NET MVC (.NET Framework) Catalog area from  
+[dotnet-architecture/eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing)  
+(eShopLegacyMVCSolution).
+
+Microsoft’s sample “modernization” of this application was a lift-and-shift to Windows Containers. The application code and framework remained largely unchanged.
+
+## What was done
+
+Used EngineOS to run a controlled modernization of the Catalog area:
+
+1. An Engineering Request defined the scope (CatalogController, CatalogService, related models, tests).
+2. EngineOS generated a concrete implementation plan.
+3. The plan was explicitly approved by a human before any code was written.
+4. The Coder executed only after approval.
+5. The result was recorded with file changes and verification.
+
+## What changed
+
+- Catalog controller, service, and interface moved toward ASP.NET Core style.
+- Focused unit tests added for the Catalog service.
+- Supporting files updated only as needed (project, DI registration).
+- A change record (`CATALOG-MODERNIZATION.md`) documents what was changed and what was left unchanged.
+
+## Verification
+
+```powershell
+dotnet test .\eShopPorted.Tests\eShopPorted.Tests.csproj# eshop-catalog-controlled-modernization
